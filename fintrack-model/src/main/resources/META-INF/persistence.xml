@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             xmlns="http://java.sun.com/xml/ns/persistence"
+             version="1.0">
+	<persistence-unit name="fintrack" transaction-type="JTA">
+		<jta-data-source>java:openejb/Resource/${dataSource}-managed</jta-data-source>
+		<non-jta-data-source>java:openejb/Resource/${dataSource}-unmanaged</non-jta-data-source>
+		<properties>
+			<!--property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/-->
+		</properties>
+	</persistence-unit>
+</persistence>

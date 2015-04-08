@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" 
+	"http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_2.dtd">
+
+<!-- template taglib -->
+<taglib>
+	<tlib-version>1.2</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>template</short-name>
+	<uri>http://common.zv.org/template</uri>
+	<info>Templating taglib</info>
+
+	<!-- composition tag -->
+	<tag>
+		<name>composition</name>
+		<description>
+			The main composing tag. It includes a template file and encloses all definitions, used in the template.
+		</description>
+		<tag-class>org.zv.common.taglib.template.CompositionTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>template</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- define tag -->
+	<tag>
+		<name>define</name>
+		<description>
+			The tag is used to define include elements. A body content is assigned to a name, unless 'src' attribute 
+			is defined. In this case, specified source file is imported and body is left unvaluated.
+		</description>
+		<tag-class>org.zv.common.taglib.template.DefineTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>src</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- defined tag -->
+	<tag>
+		<name>defined</name>
+		<description>
+			The tag is used to test definition of element. If name was defined, a body is evaluated, unless 
+			attribute 'not' is set to true, which means reverse action.
+		</description>
+		<tag-class>org.zv.common.taglib.template.DefinedTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>not</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- insert tag -->
+	<tag>
+		<name>insert</name>
+		<description>
+			Used inside templates to insert defined elements. If no element with specified name was defined,
+			then body is evaluated.
+		</description>
+		<tag-class>org.zv.common.taglib.template.InsertTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

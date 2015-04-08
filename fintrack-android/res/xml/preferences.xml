@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+                android:key="preferences_screen"
+                android:title="Fintrack Preferences"
+                android:summary="Set user preferences">
+
+        <EditTextPreference
+                android:key="service_location"
+                android:title="RESTful service location"
+                android:summary="Set URL of RESTful service"
+                android:dialogTitle="RESTful service" />
+
+        <EditTextPreference
+                android:key="username"
+                android:title="Username"
+                android:summary="Set the username for authentication"
+                android:dialogTitle="Username" />
+
+        <EditTextPreference
+                android:key="password"
+                android:title="Password"
+                android:summary="Set the password for authentication"
+                android:dialogTitle="Password"
+                android:password="true" />
+
+        <CheckBoxPreference
+                android:key="show_toast"
+                android:title="Show toast"
+                android:summary="Show toast messages during communication"
+                android:dialogTitle="Show toast" />
+
+</PreferenceScreen>

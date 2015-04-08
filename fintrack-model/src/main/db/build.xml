@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="latin1" ?>
+<project name="fintrack-datasource-setup" default="all" basedir=".">
+	<property environment="env"/>
+	<property file="build.properties"/>
+	
+	<target name="init">
+		<tstamp/>
+	</target>
+
+	<target name="all" depends="recreate-database, create-database-objects"/>
+	<target name="recreate-database" depends="drop-database, create-database"/>
+	<target name="recreate-database-objects" depends="drop-database-objects, create-database-objects"/>
+
+	<!-- Drop user, database -->
+	<target name="drop-database" depends="init">
+		<echo message="Drop database, user"/>
+		<exec executable="${path.prefix}/bin/dropdb" failonerror="false">
+			<arg line="${jdbc.dbname}"/>
+		</exec>
+		<exec executable="${path.prefix}/bin/dropuser" failonerror="false">
+			<arg line="${jdbc.username}"/>
+		</exec>
+	</target>
+
+	<!-- Create user, database -->
+	<target name="create-database" depends="init">
+		<echo message="Create user, database, language, set password"/>
+		<exec executable="${path.prefix}/bin/createuser" failonerror="false">
+			<arg line="-s -d ${jdbc.username}"/>
+		</exec>
+		<exec executable="${path.prefix}/bin/createdb" failonerror="true">
+			<arg line="-U ${jdbc.username} ${jdbc.dbname}"/>
+		</exec>
+		<exec executable="${path.prefix}/bin/createlang" failonerror="true">
+			<arg line="-U ${jdbc.username} plpgsql ${jdbc.dbname}"/>
+		</exec>
+		<sql rdbms="postgresql" 
+         driver="org.postgresql.Driver"
+         classpath="${jdbc.jar}"
+         userid="${jdbc.system.username}" 
+         password="${jdbc.system.password}"
+         url="${jdbc.url}"
+         onerror="stop">
+         alter user ${jdbc.username} with password '${jdbc.password}';
+    </sql>
+	</target>
+
+	<!-- Drop database objects -->
+	<target name="drop-database-objects" depends="init">
+		<echo message="Drop database objects"/>
+		<sql rdbms="postgresql" 
+         driver="org.postgresql.Driver"
+         classpath="${jdbc.jar}"
+         userid="${jdbc.system.username}" 
+         password="${jdbc.system.password}"
+         url="${jdbc.url}"
+         onerror="continue">
+			<transaction src="drop.sql"/>
+		</sql>
+	</target>
+
+	<!-- Create database objects -->
+	<target name="create-database-objects" depends="init">
+		<echo message="Create database objects"/>
+		<sql rdbms="postgresql" 
+         driver="org.postgresql.Driver"
+         classpath="${jdbc.jar}"
+         userid="${jdbc.system.username}" 
+         password="${jdbc.system.password}"
+         url="${jdbc.url}"
+         onerror="stop">
+			<transaction src="create.sql"/>
+		</sql>
+	</target>
+
+	<!-- Populate database with test data -->
+	<target name="populate-test-data" depends="init">
+		<echo message="Populate database with test data"/>
+		<sql rdbms="postgresql" 
+			driver="org.postgresql.Driver"
+			classpath="${jdbc.jar}"
+			userid="${jdbc.system.username}" 
+			password="${jdbc.system.password}"
+			url="${jdbc.url}"
+			onerror="stop">
+		<transaction src="test-data.sql"/>
+		</sql>
+	</target>
+</project>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.zv.fintrack</groupId>
+		<artifactId>fintrack</artifactId>
+		<version>7.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>fintrack-model</artifactId>
+	<packaging>jar</packaging>
+	<name>Financial Tracker Model</name>
+
+	<!-- dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.openejb</groupId>
+			<artifactId>javaee-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.openejb</groupId>
+			<artifactId>openejb-core</artifactId>
+			<version>3.1.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>8.4-701.jdbc3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<version>2.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<!-- build -->
+	<build>
+		<finalName>fintrack-model</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<forkMode>pertest</forkMode>
+					<argLine>-javaagent:${basedir}/target/openejb-javaagent-3.1.2.jar</argLine>
+					<workingDirectory>${basedir}/target</workingDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.apache.openejb</groupId>
+									<artifactId>openejb-javaagent</artifactId>
+									<version>3.1.2</version>
+									<outputDirectory>${project.build.directory}</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<targetPath>META-INF</targetPath>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>persistence.xml</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>

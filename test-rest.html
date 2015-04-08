@@ -1,0 +1,218 @@
+<!-- curl -H "Authorization: Basic YXJqdTphcmp1OTUzMQ==" http://localhost:8080/fintrack/rest/categories -->
+
+<html>
+<body>
+    <h1>Categories</h1>
+	<form method="get" action="http://192.168.1.10:8080/fintrack/rest/categories">
+		<input type="submit" value="Get"/>
+	</form>
+	<hr/>
+
+
+    <h1>Add new income</h1>
+	<form method="post" action="http://192.168.1.10:8080/fintrack/rest/incomes/new">
+		<table cellspacing=5 cellpading=5>
+			<tr>
+				<td>Create date:</td>
+				<td><input type="text" id="createDate" name="createDate" value="2011-01-01" size="12"/></td>
+			</tr>
+			<tr>
+				<td>User id:</td>
+				<td><input type="text" id="uesrId" name="uesrId" value="arju" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Amount:</td>
+				<td><input type="text" id="amount" name="amount" value="" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Descr:</td>
+				<td><input type="text" id="descr" name="descr" value="" size="12"/></td>
+			</tr>
+		</table><p>
+		<input type="submit" value="Post"/>
+	</form>
+	<hr/>
+    
+    <h1>Latest 10 incomes</h1>
+	<form method="get" action="http://192.168.1.10:8080/fintrack/rest/incomes/latest-10">
+		<input type="submit" value="Get"/>
+	</form>
+	<hr/>
+    
+    <h1>Selected Incomes</h1>
+	<form method="post" action="http://192.168.1.10:8080/fintrack/rest/incomes/list">
+		<table cellspacing=5 cellpading=5>
+			<tr>
+				<td>Date from:</td>
+				<td><input type="text" class="date-pick" id="dateFrom" name="dateFrom" value="2010-01-01" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Date to:</td>
+				<td><input type="text" class="date-pick" id="dateTo" name="dateTo" value="2010-02-31" size="12"/></td>
+			</tr>
+			<tr>
+				<td>User:</td>
+				<td><input type="text" name="userId" value="" size="12"/></td>
+			</tr>
+		</table><p>
+		<input type="submit" value="Post"/>
+	</form>
+	<hr/>
+
+    <h1>Incomes Summary Simple</h1>
+	<form method="post" action="http://192.168.1.10:8080/fintrack/rest/incomes/summary/simple">
+		<table cellspacing=5 cellpading=5>
+			<tr>
+				<td>Date from:</td>
+				<td><input type="text" class="date-pick" id="dateFrom" name="dateFrom" value="2010-01-01" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Date to:</td>
+				<td><input type="text" class="date-pick" id="dateTo" name="dateTo" value="2010-02-31" size="12"/></td>
+			</tr>
+		</table><p>
+		<input type="submit" value="Post"/>
+	</form>
+	<hr/>
+
+    <h1>Incomes Summary By Month</h1>
+	<form method="post" action="http://192.168.1.10:8080/fintrack/rest/incomes/summary/bymonth">
+		<table cellspacing=5 cellpading=5>
+			<tr>
+				<td>Date from:</td>
+				<td><input type="text" class="date-pick" id="dateFrom" name="dateFrom" value="2010-01-01" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Date to:</td>
+				<td><input type="text" class="date-pick" id="dateTo" name="dateTo" value="2010-02-31" size="12"/></td>
+			</tr>
+		</table><p>
+		<input type="submit" value="Post"/>
+	</form>
+	<hr/>
+
+
+    <h1>Add new expense</h1>
+	<form method="post" action="http://192.168.1.10:8080/fintrack/rest/expenses/new">
+		<table cellspacing=5 cellpading=5>
+			<tr>
+				<td>Create date:</td>
+				<td><input type="text" id="createDate" name="createDate" value="2011-01-01" size="12"/></td>
+			</tr>
+			<tr>
+				<td>User id:</td>
+				<td><input type="text" id="uesrId" name="uesrId" value="arju" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Category id:</td>
+				<td><input type="text" id="categoryId" name="categoryId" value="" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Amount:</td>
+				<td><input type="text" id="amount" name="amount" value="" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Descr:</td>
+				<td><input type="text" id="descr" name="descr" value="" size="12"/></td>
+			</tr>
+		</table><p>
+		<input type="submit" value="Post"/>
+	</form>
+	<hr/>
+
+    <h1>Latest 10 expenses</h1>
+	<form method="get" action="http://192.168.1.10:8080/fintrack/rest/expenses/latest-10">
+		<input type="submit" value="Get"/>
+	</form>
+	<hr/>
+
+    <h1>Selected Expenses</h1>
+	<form method="post" action="http://192.168.1.10:8080/fintrack/rest/expenses/list">
+		<table cellspacing=5 cellpading=5>
+			<tr>
+				<td>Date from:</td>
+				<td><input type="text" class="date-pick" id="dateFrom" name="dateFrom" value="2011-01-01" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Date to:</td>
+				<td><input type="text" class="date-pick" id="dateTo" name="dateTo" value="2011-01-31" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Categories: </td>
+				<td><table>
+					<tr><td><input type="checkbox" name="categoryIds" value="bd">Butas/Draudimas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="ti">Telefonas/Internetas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="ma">Maistas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="tr">Transportas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="rb">Rubai</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="pr">Pramogos</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="fv">Foto/Video</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="iv">Ivairus</td></tr>
+				</table></td>
+			</tr>
+		</table><p>
+		<input type="submit" value="Post"/>
+	</form>
+	<hr/>
+
+    <h1>Expenses Summary By Category</h1>
+	<form method="post" action="http://192.168.1.10:8080/fintrack/rest/expenses/summary/bycategory">
+		<table cellspacing=5 cellpading=5>
+			<tr>
+				<td>Date from:</td>
+				<td><input type="text" class="date-pick" id="dateFrom" name="dateFrom" value="2011-01-01" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Date to:</td>
+				<td><input type="text" class="date-pick" id="dateTo" name="dateTo" value="2011-01-31" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Categories: </td>
+				<td><table>
+					<tr><td><input type="checkbox" name="categoryIds" value="bd">Butas/Draudimas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="ti">Telefonas/Internetas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="ma">Maistas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="tr">Transportas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="rb">Rubai</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="pr">Pramogos</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="fv">Foto/Video</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="iv">Ivairus</td></tr>
+				</table></td>
+			</tr>
+		</table><p>
+		<input type="submit" value="Post"/>
+	</form>
+	<hr/>
+
+    <h1>Expenses Summary By Month</h1>
+	<form method="post" action="http://192.168.1.10:8080/fintrack/rest/expenses/summary/bymonth">
+		<table cellspacing=5 cellpading=5>
+			<tr>
+				<td>Date from:</td>
+				<td><input type="text" class="date-pick" id="dateFrom" name="dateFrom" value="2011-01-01" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Date to:</td>
+				<td><input type="text" class="date-pick" id="dateTo" name="dateTo" value="2011-01-31" size="12"/></td>
+			</tr>
+			<tr>
+				<td>Categories: </td>
+				<td><table>
+					<tr><td><input type="checkbox" name="categoryIds" value="bd">Butas/Draudimas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="ti">Telefonas/Internetas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="ma">Maistas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="tr">Transportas</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="rb">Rubai</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="pr">Pramogos</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="fv">Foto/Video</td></tr>
+					<tr><td><input type="checkbox" name="categoryIds" value="iv">Ivairus</td></tr>
+				</table></td>
+			</tr>
+		</table><p>
+		<input type="submit" value="Post"/>
+	</form>
+	<hr/>
+
+</body>
+</html>
+

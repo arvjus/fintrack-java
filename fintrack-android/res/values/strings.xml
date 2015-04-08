@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fintrack</string>
+
+	<string name="menu_prefs_item">Prefs</string>
+	<string name="menu_connect_item">Connect</string>
+	<string name="menu_close_item">Close</string>
+	
+	<string name="main_income_button">Add Income</string>
+	<string name="main_expense_button">Add Expense</string>
+	<string name="main_recent_button">Recently Added Records</string>
+	<string name="main_select_button">Select Records</string>
+
+	<string name="income_title">Fintrack - Add Income</string>
+	<string name="income_create_date_textview">Create date: </string>
+	<string name="income_amount_textview">Amount: </string>
+	<string name="income_descr_textview">Description: </string>
+	<string name="income_save_button">Save income</string>
+
+	<string name="expense_title">Fintrack - Add Expense</string>
+	<string name="expense_create_date_textview">Create date: </string>
+	<string name="expense_category_textview">Category: </string>
+	<string name="expense_amount_textview">Amount: </string>
+	<string name="expense_descr_textview">Description: </string>
+	<string name="expense_save_button">Save expense</string>
+
+	<string name="recent_title">Fintrack - Recently Added Records</string>
+	<string name="recent_income_textview">Number of last added incomes:</string>
+	<string name="recent_expense_textview">Number of last added expenses:</string>
+	<string name="recent_search_button">Search</string>
+	<string-array name="recent_spinner_entries">
+	   	<item>1</item>
+	   	<item>5</item>
+	   	<item>10</item>
+	   	<item>50</item>
+	   	<item>100</item>
+	</string-array>
+
+	<string name="select_title">Fintrack - Select Records</string>
+	<string name="select_date_from_textview">Date from:</string>
+	<string name="select_date_to_textview">Date to:</string>
+	<string name="select_incomes_textview">Incomes:</string>
+	<string name="select_incomes_checkbox"> Income records</string>
+	<string name="select_categories_textview">Categories:</string>
+	<string name="select_plain_button">Search Plain Records</string>
+	<string name="select_summary_simple_button">Search Summary Simple</string>
+	<string name="select_summary_bymonth_button">Search Summary By Month</string>
+
+	<string name="result_title">Fintrack - Result Records</string>
+</resources>

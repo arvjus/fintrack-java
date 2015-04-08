@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+        version="2.4">
+
+	<display-name>Financial Tracker Application</display-name>
+	<description>Personal financial tracker application.</description>
+	
+	<!-- Security --> 
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>user-stuff</web-resource-name>
+			<url-pattern>/user/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>viewer</role-name>
+			<role-name>reporter</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>admin-stuff</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>rest-stuff</web-resource-name>
+			<url-pattern>/rest/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>viewer</role-name>
+			<role-name>reporter</role-name>
+		</auth-constraint>
+	</security-constraint>
+<!--
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>fintrack users</realm-name>
+		<form-login-config>
+			<form-login-page>/login-page.jsp</form-login-page>
+			<form-error-page>/error-page.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+-->
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>fintrack users</realm-name>
+	</login-config>
+	
+	<security-role>
+		<role-name>viewer</role-name>
+	</security-role>
+	<security-role>
+		<role-name>reporter</role-name>
+	</security-role>
+	<security-role>
+		<role-name>admin</role-name>
+	</security-role>
+
+	<!-- Welcome files -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+ 	<mime-mapping>
+		<extension>ico</extension>
+		<mime-type>image/x-icon</mime-type>
+    </mime-mapping>
+
+	<!-- Fintrack servlets -->
+	<servlet>
+		<servlet-name>Controller</servlet-name>
+		<servlet-class>org.zv.common.mvc.Controller</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>*.page</url-pattern>
+	</servlet-mapping>
+
+	<!-- RESTful Services	--> 
+    <servlet>
+        <servlet-name>jersey</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+			<param-name>com.sun.jersey.config.property.resourceConfigClass</param-name>
+			<param-value>com.sun.jersey.api.core.PackagesResourceConfig</param-value>
+        </init-param>
+        <init-param>
+          <param-name>com.sun.jersey.config.property.packages</param-name>
+          <param-value>org.zv.fintrack.rest</param-value>
+        </init-param>
+		<load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>jersey</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
+	<!-- EJB references -->
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/CategoryDao</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>org.zv.fintrack.ejb.api.CategoryDao</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/UserDao</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>org.zv.fintrack.ejb.api.UserDao</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/IncomeDao</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>org.zv.fintrack.ejb.api.IncomeDao</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/ExpenseDao</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>org.zv.fintrack.ejb.api.ExpenseDao</local>
+	</ejb-local-ref>
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/DataAggregation</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>org.zv.fintrack.ejb.api.DataAggregation</local>
+	</ejb-local-ref>
+
+</web-app>
+

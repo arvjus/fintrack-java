@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.zv.common</groupId>
+	<artifactId>common-taglib</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<description>Common TabLib</description>
+
+	<!-- Repositories -->
+	<repositories>
+		<repository>
+			<id>apache-m2-snapshot</id>
+			<name>Apache Snapshot Repository</name>
+			<url>http://repository.apache.org/snapshots</url>
+		</repository>
+        <repository>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>apache-maven-snapshots</id>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+        </repository>
+        <repository>
+            <id>java.net</id>
+            <url>http://download.java.net/maven/1</url>
+            <layout>legacy</layout>
+        </repository>        
+		<repository>
+			<id>repo1</id>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+	</repositories>
+
+	<!-- dependencies -->
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<!-- build -->
+	<build>
+		<finalName>common-taglib</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

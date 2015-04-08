@@ -1,0 +1,214 @@
+/*
+* CSS for FinTrack
+*/
+
+#heading {
+    float: top;
+    border: 1px #999999 solid;
+    background: #E9C57A;
+    font-weight: bold;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#subheading {
+    font-weight: bold;
+}
+
+body {
+    color: #000000;
+    background: #ffffff;
+    padding: 0px;
+    margin: 0px;
+}
+
+a:link, a:visited, a:hover {
+    font-weight: bold;
+    color:#2048c5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #ac0011;
+}
+
+/*
+* Menu elements
+*/
+
+#menu {
+    float: left;
+    border: 1px #999999 solid;
+    width: 150px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 90%;
+}
+
+#menu img {
+    float: top;
+    border: none;
+    width: 150px;
+    height: 130px;
+}
+
+#menu .heading {
+    padding: 4px;
+    text-align: center;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#menu li.sub {
+    color: #000000;
+    background: #d6d6d6;
+    font-weight: bold;
+    padding: 0px;
+}
+
+#menu ul.sub {
+    padding: 0px;
+    margin: 0px;
+    border-top: 1px #999999 solid;
+    border-bottom: 1px #999999 solid;
+    list-style: none;
+}
+
+#menu li a {
+    display: block;
+    background: #f0f0f0;
+    color: #2048c5;
+    border-top: 1px #d6d6d6 solid;
+    border-bottom: 1px #d6d6d6 solid;
+    margin: 0px;
+    padding: 4px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+html>body #menu li a {
+    width: auto;
+}
+
+#menu li.item a:hover, ul.sub li.item a:hover {
+    display: block;
+    background: #F27D17;
+    color: #ffffff;
+    border-top: 1px #6F000B solid;
+    border-bottom: 1px #6F000B solid;
+    text-decoration: none;
+}
+
+/*
+* Table elements
+*/
+
+table.data {
+    width:                  100%;
+    padding:				1px;
+    spacing:				1px;
+    border:					0px;
+}
+
+th.inc_h {
+	background-color:		#AABBAA;
+}
+
+td.inc_l {
+	background-color:		#DDEEDD;
+    text-align:             left;
+    padding-left:           3px;
+    padding-right:          3px;
+}
+
+td.inc_r {
+	background-color:		#DDEEDD;
+    text-align:             right;
+    padding-left:           3px;
+    padding-right:          3px;
+}
+
+th.exp_h {
+	background-color:		#AAAABB;
+}
+
+td.exp_l {
+	background-color:		#DDDDEE;
+    text-align:             left;
+    padding-left:           3px;
+    padding-right:          3px;
+}
+
+td.exp_r {
+	background-color:		#DDDDEE;
+    text-align:             right;
+    padding-left:           3px;
+    padding-right:          3px;
+}
+
+th.adm_h {
+	background-color:		#AAAABB;
+}
+
+td.adm_l {
+	background-color:		#DDDDEE;
+    text-align:             left;
+    padding-left:           3px;
+    padding-right:          3px;
+}
+
+td.adm_r {
+	background-color:		#DDDDEE;
+    text-align:             right;
+    padding-left:           3px;
+    padding-right:          3px;
+}
+
+/*
+* Messages
+*/
+
+.error {
+	color:					#ff3333;
+}
+
+.message {
+	color:					#000000;
+}
+
+input.dp-applied {
+	width: 140px;
+	float: left;
+}
+
+
+/*
+* Date picker
+*/ 
+a.dp-choose-date {
+	float: left;
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 5px 3px 0;
+	display: block;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url(../images/datePicker.png) no-repeat; 
+}
+a.dp-choose-date.dp-disabled {
+	background-position: 0 -20px;
+	cursor: default;
+}
+

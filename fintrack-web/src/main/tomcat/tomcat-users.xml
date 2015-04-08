@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<tomcat-users>
+<!--
+  NOTE:  By default, no user is included in the "manager" role required
+  to operate the "/manager" web application.  If you wish to use this app,
+  you must define such a user - the username and password are arbitrary.
+-->
+  <role rolename="viewer"/>
+  <role rolename="reporter"/>
+  <role rolename="admin"/>
+  <user username="arju" password="arju9531" roles="viewer,reporter,admin"/>
+  <user username="zuikyte" password="mazyte" roles="viewer,reporter"/>
+  <user username="simon" password="simon123" roles="viewer"/>
+</tomcat-users>

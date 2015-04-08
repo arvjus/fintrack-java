@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <table name="users">
+    <column>user_id</column>
+    <column>passwd</column>
+    <row>
+      <value>user</value>
+      <value>user123</value>
+    </row>
+    <row>
+      <value>admin</value>
+      <value>admin123</value>
+    </row>
+  </table>
+  <table name="user_roles">
+    <column>id</column>
+    <column>user_id</column>
+    <column>role</column>
+    <row>
+      <value>1</value>
+      <value>user</value>
+      <value>viewer</value>
+    </row>
+    <row>
+      <value>2</value>
+      <value>admin</value>
+      <value>admin</value>
+    </row>
+  </table>
+</dataset>
+

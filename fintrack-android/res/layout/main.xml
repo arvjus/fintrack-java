@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/white"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" 
+	android:paddingLeft="20px" 
+	android:paddingTop="10px" 
+	android:paddingRight="20px">
+	<ImageView android:id="@+id/main_fintrack_fintrack"
+		android:src="@drawable/logo"
+	   	android:layout_gravity="center" 
+	   	android:layout_height="wrap_content" 
+	   	android:layout_width="wrap_content" 
+	   	android:layout_marginBottom="10px"
+	   	android:state_enabled="false"/>
+	<Button 
+		android:id="@+id/main_income_button" 
+		android:text="@string/main_income_button"
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent"
+		android:state_enabled="false"/>
+	<Button 
+		android:id="@+id/main_expense_button" 
+		android:text="@string/main_expense_button"
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent"
+		android:state_enabled="false"/>
+	<Button 
+		android:id="@+id/main_recent_button" 
+		android:text="@string/main_recent_button"
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent" 
+		android:enabled="true"
+		android:state_enabled="false"/>
+	<Button 
+		android:id="@+id/main_select_button" 
+		android:text="@string/main_select_button"
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent"
+		android:state_enabled="false"/>
+</LinearLayout>

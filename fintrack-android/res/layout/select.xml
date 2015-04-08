@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/select_layout"
+              android:background="@drawable/white"
+              android:layout_width="fill_parent" 
+              android:layout_height="fill_parent" 
+              android:orientation="vertical" android:paddingTop="5px">
+
+	<TableRow>              
+	    <TextView android:id="@+id/select_date_from_textview"
+	              android:text="@string/select_date_from_textview"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"/>
+	    <Button android:id="@+id/select_date_from_button" 
+	    		 android:layout_height="wrap_content" 
+	    		 android:layout_width="fill_parent" 
+	    		 android:gravity="center"/>
+	</TableRow>              
+    
+	<TableRow>              
+	    <TextView android:id="@+id/select_date_to_textview"
+	              android:text="@string/select_date_to_textview"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"/>
+	    <Button android:id="@+id/select_date_to_button" 
+	    		android:layout_height="wrap_content" 
+	    		android:layout_width="fill_parent" 
+	    		android:gravity="center"/>
+	</TableRow>              
+
+	<TableRow>              
+	    <TextView android:id="@+id/select_incomes_textview"
+				  android:text="@string/select_incomes_textview" 
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"
+	              android:minWidth="100px"/>
+		<CheckBox android:id="@+id/select_incomes_checkbox"
+				  android:layout_width="wrap_content" 
+				  android:layout_height="wrap_content" 
+				  android:visibility="visible" 
+				  android:text="@string/select_incomes_checkbox" 
+				  android:textColor="#000000" 
+				  android:checked="true"/>
+	</TableRow>              
+
+	<TableRow>              
+	    <TextView android:id="@+id/select_categories_textview"
+	              android:text="@string/select_categories_textview"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content" android:minWidth="80px"/>
+	    <Spinner android:id="@+id/select_categories_spinner" 
+	  			 android:layout_width="wrap_content" 
+	  			 android:layout_height="wrap_content" android:minWidth="220px"/>
+	</TableRow>              
+
+	<Button android:id="@+id/select_plain_button"
+			android:text="@string/select_plain_button" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+
+	<Button android:id="@+id/select_summary_simple_button"
+			android:text="@string/select_summary_simple_button" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+
+	<Button android:id="@+id/select_summary_bymonth_button"
+			android:text="@string/select_summary_bymonth_button" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+</TableLayout>

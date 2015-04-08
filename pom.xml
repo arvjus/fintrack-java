@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.zv.fintrack</groupId>
+	<artifactId>fintrack</artifactId>
+	<version>7.0</version>
+	<packaging>pom</packaging>
+	<description>Financial Tracker</description>
+
+	<modules>
+		<module>fintrack-model</module>
+		<module>fintrack-web</module>
+	</modules>
+
+	<!-- Repositories -->
+	<repositories>
+		<repository>
+			<id>apache-m2-snapshot</id>
+			<name>Apache Snapshot Repository</name>
+			<url>http://repository.apache.org/snapshots</url>
+		</repository>
+        <repository>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>apache-maven-snapshots</id>
+            <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+        </repository>
+        <repository>
+            <id>java.net</id>
+            <url>http://download.java.net/maven/1</url>
+            <layout>legacy</layout>
+        </repository>        
+		<repository>
+			<id>repo1</id>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+	</repositories>
+
+	<!-- dependencies -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.openejb</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>5.0-2</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.14</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<!-- build -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<dataSource>fintrack_test</dataSource>
+				<maven.test.skip>false</maven.test.skip>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<dataSource>fintrack</dataSource>
+				<maven.test.skip>true</maven.test.skip>
+			</properties>
+		</profile>
+	</profiles>
+</project>

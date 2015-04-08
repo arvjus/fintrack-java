@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <table name="incomes">
+    <column>income_id</column>
+    <column>user_id</column>
+    <column>create_date</column>
+    <column>amount</column>
+    <column>descr</column>
+    <row>
+      <value>1</value>
+      <value>user</value>
+      <value>2004-11-23 00:00:00</value>
+      <value>1111.0</value>
+      <value>uz tetos $300</value>
+    </row>
+    <row>
+      <value>2</value>
+      <value>user</value>
+      <value>2007-09-24 00:00:00</value>
+      <value>2222.0</value>
+      <value>FKassa uz vaikus</value>
+    </row>
+    <row>
+      <value>3</value>
+      <value>user</value>
+      <value>2004-04-03 00:00:00</value>
+      <value>12222.0</value>
+      <value>Uz Kauno buta</value>
+    </row>
+    <row>
+      <value>4</value>
+      <value>user</value>
+      <value>2004-06-24 00:00:00</value>
+      <value>1111.0</value>
+      <value>Daivos foraldrapenning</value>
+    </row>
+    <row>
+      <value>5</value>
+      <value>user</value>
+      <value>2010-03-16 10:03:30</value>
+      <value>123.4</value>
+      <value>algyte</value>
+    </row>
+    <row>
+      <value>6</value>
+      <value>user</value>
+      <value>2010-03-16 10:00:35</value>
+      <value>123.4</value>
+      <value>algyte</value>
+    </row>
+    <row>
+      <value>7</value>
+      <value>user</value>
+      <value>2004-08-27 00:00:00</value>
+      <value>1111.0</value>
+      <value>Foraldrapenning</value>
+    </row>
+    <row>
+      <value>8</value>
+      <value>user</value>
+      <value>2004-10-21 00:00:00</value>
+      <value>11111.0</value>
+      <value>alga</value>
+    </row>
+    <row>
+      <value>9</value>
+      <value>none</value>
+      <value>2007-08-22 00:00:00</value>
+      <value>11111.0</value>
+      <value>Arvydo alga</value>
+    </row>
+    <row>
+      <value>10</value>
+      <value>none</value>
+      <value>2004-10-27 00:00:00</value>
+      <value>1111.0</value>
+      <value>Foraldrarpenning</value>
+    </row>
+    <row>
+      <value>11</value>
+      <value>none</value>
+      <value>2007-07-31 00:00:00</value>
+      <value>1111.0</value>
+      <value>FK-assa uz vaikus</value>
+    </row>
+    <row>
+      <value>12</value>
+      <value>none</value>
+      <value>2004-09-28 00:00:00</value>
+      <value>222.0</value>
+      <value>uz maziuka</value>
+    </row>
+    <row>
+      <value>13</value>
+      <value>none</value>
+      <value>2004-11-23 00:00:00</value>
+      <value>111.0</value>
+      <value>uz zuikiuka</value>
+    </row>
+    <row>
+      <value>14</value>
+      <value>test</value>
+      <value>2010-03-16 10:02:20</value>
+      <value>123.4</value>
+      <value>algyte</value>
+    </row>
+    <row>
+      <value>15</value>
+      <value>none</value>
+      <value>2004-08-20 00:00:00</value>
+      <value>222.0</value>
+      <value>Uz Simoniuka</value>
+    </row>
+    <row>
+      <value>16</value>
+      <value>none</value>
+      <value>2007-09-27 00:00:00</value>
+      <value>1111.0</value>
+      <value>mammaledig</value>
+    </row>
+    <row>
+      <value>17</value>
+      <value>none</value>
+      <value>2004-06-25 00:00:00</value>
+      <value>11111.0</value>
+      <value>Alga</value>
+    </row>
+    <row>
+      <value>18</value>
+      <value>none</value>
+      <value>2007-09-27 00:00:00</value>
+      <value>2222.0</value>
+      <value>Daivos algyte</value>
+    </row>
+    <row>
+      <value>19</value>
+      <value>test</value>
+      <value>2010-03-16 10:00:35</value>
+      <value>12345.6</value>
+      <value>alga</value>
+    </row>
+    <row>
+      <value>20</value>
+      <value>none</value>
+      <value>2004-07-27 00:00:00</value>
+      <value>1111.0</value>
+      <value>Daivos Fkassa</value>
+    </row>
+    <row>
+      <value>21</value>
+      <value>none</value>
+      <value>2004-05-27 00:00:00</value>
+      <value>2222.0</value>
+      <value>Sjukpenning</value>
+    </row>
+    <row>
+      <value>22</value>
+      <value>none</value>
+      <value>2007-09-21 00:00:00</value>
+      <value>11111.0</value>
+      <value>alga</value>
+    </row>
+    <row>
+      <value>23</value>
+      <value>test</value>
+      <value>2010-03-16 10:02:20</value>
+      <value>12345.6</value>
+      <value>alga</value>
+    </row>
+    <row>
+      <value>24</value>
+      <value>none</value>
+      <value>2007-09-03 00:00:00</value>
+      <value>1111.0</value>
+      <value>FK uz 5dienas</value>
+    </row>
+    <row>
+      <value>25</value>
+      <value>test</value>
+      <value>2010-03-16 09:57:22</value>
+      <value>12345.6</value>
+      <value>alga</value>
+    </row>
+    <row>
+      <value>26</value>
+      <value>test</value>
+      <value>2010-03-16 10:03:30</value>
+      <value>12345.6</value>
+      <value>alga</value>
+    </row>
+    <row>
+      <value>27</value>
+      <value>none</value>
+      <value>2004-07-20 00:00:00</value>
+      <value>222.0</value>
+      <value>Uz Simoniuka</value>
+    </row>
+    <row>
+      <value>28</value>
+      <value>none</value>
+      <value>2004-09-22 00:00:00</value>
+      <value>11111.0</value>
+      <value>alga</value>
+    </row>
+    <row>
+      <value>29</value>
+      <value>none</value>
+      <value>2004-10-27 00:00:00</value>
+      <value>222.0</value>
+      <value>Uz Simoniuka</value>
+    </row>
+    <row>
+      <value>30</value>
+      <value>none</value>
+      <value>2004-06-24 00:00:00</value>
+      <value>1111.0</value>
+      <value>Arvydo foraldrapenning</value>
+    </row>
+  </table>
+
+  <table name="users">
+    <column>user_id</column>
+    <column>passwd</column>
+    <row>
+      <value>none</value>
+      <value>none</value>
+    </row>
+  </table>
+
+  <table name="user_roles">
+    <column>id</column>
+    <column>user_id</column>
+    <column>role</column>
+    <row>
+      <value>1</value>
+      <value>none</value>
+      <value>none</value>
+    </row>
+  </table>
+</dataset>
+

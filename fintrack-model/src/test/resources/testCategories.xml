@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <table name="categories">
+    <column>category_id</column>
+    <column>name</column>
+    <column>name_short</column>
+    <column>order_pos</column>
+    <column>descr</column>
+    <row>
+      <value>bd</value>
+      <value>Butas&#47;Draudimas</value>
+      <value>Butas&#47;Draud</value>
+      <value>1</value>
+      <value>Butas&#47;Draudimas</value>
+    </row>
+    <row>
+      <value>ti</value>
+      <value>Telefonas&#47;Internetas</value>
+      <value>Telef&#47;Intern</value>
+      <value>2</value>
+      <value>Telefonas&#47;Internetas</value>
+    </row>
+    <row>
+      <value>ma</value>
+      <value>Maistas</value>
+      <value>Maistas</value>
+      <value>3</value>
+      <value>Maistas</value>
+    </row>
+  </table>
+
+  <table name="incomes">
+    <column>income_id</column>
+    <column>user_id</column>
+    <column>create_date</column>
+    <column>amount</column>
+    <column>descr</column>
+    <row>
+      <value>624</value>
+      <value>none</value>
+      <value>2004-11-23 00:00:00</value>
+      <value>1111.0</value>
+      <value>???</value>
+    </row>
+  </table>
+
+  <table name="expenses">
+    <column>expense_id</column>
+    <column>category_id</column>
+    <column>user_id</column>
+    <column>create_date</column>
+    <column>amount</column>
+    <column>descr</column>
+    <row>
+      <value>2889</value>
+      <value>ma</value>
+      <value>none</value>
+      <value>2007-02-18 00:00:00</value>
+      <value>77.0</value>
+      <value></value>
+    </row>
+  </table>
+</dataset>
+

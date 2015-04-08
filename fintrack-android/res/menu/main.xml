@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item 
+		android:id="@+id/main_menu_prefs_item"
+		android:icon="@drawable/prefs" 
+		android:title="@string/menu_prefs_item">
+	</item>
+	<item 
+		android:id="@+id/main_menu_connect_item"
+		android:icon="@drawable/connect" 
+		android:title="@string/menu_connect_item">
+	</item>
+	<item 
+		android:id="@+id/main_menu_close_item"
+		android:icon="@drawable/close" 
+		android:title="@string/menu_close_item">
+	</item>
+</menu>
